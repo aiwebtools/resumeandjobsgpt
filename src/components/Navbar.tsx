@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,10 +19,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const aiToolLinks = [
     { name: "Resume Enhancer GPT", url: "https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt" },
     { name: "Resume Specialist GPT", url: "https://chatgpt.com/g/g-3RPD1GkR4-resume-specialist-gpt" },
     { name: "Job Finder GPT", url: "https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt" },
+  ];
+
+  const navLinks = [
+    ...aiToolLinks,
     { name: "Disclaimer", url: "#disclaimer" },
     { name: "More AI Tools", url: "https://www.aiwebtools.ai" },
   ];
@@ -55,8 +60,31 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex md:items-center space-x-3">
+            {/* AI Tool Golden Buttons */}
+            <div className="flex space-x-2 mr-4">
+              {aiToolLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  className="group"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(245,158,11,0.5)] h-10 w-10 p-0 flex items-center justify-center rounded-md"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    <span className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-white bg-black/70 px-2 py-1 rounded whitespace-nowrap transition-opacity">
+                      {link.name}
+                    </span>
+                  </Button>
+                </a>
+              ))}
+            </div>
+            
+            {/* Other nav links */}
+            {navLinks.slice(3).map((link) => (
               <a
                 key={link.name}
                 href={link.url}
@@ -84,7 +112,30 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-cyber-dark/95 backdrop-blur-lg border-t border-white/10 animate-slide-up">
           <div className="container mx-auto px-4 py-3">
-            {navLinks.map((link) => (
+            {/* Mobile AI Tools Buttons */}
+            <div className="flex justify-center space-x-4 py-4">
+              {aiToolLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  className="inline-block"
+                >
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 h-12 w-12 p-0 flex items-center justify-center rounded-md"
+                  >
+                    <Sparkles className="h-5 w-5" />
+                  </Button>
+                  <span className="block text-xs text-center mt-1 text-white">
+                    {link.name.split(' ')[0]}
+                  </span>
+                </a>
+              ))}
+            </div>
+            
+            {/* Other mobile nav links */}
+            {navLinks.slice(3).map((link) => (
               <a
                 key={link.name}
                 href={link.url}
