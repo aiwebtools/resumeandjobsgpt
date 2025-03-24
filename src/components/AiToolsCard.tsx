@@ -15,6 +15,11 @@ const AiToolsCard = () => {
       description: "Get expert guidance on resume optimization",
     },
     {
+      name: "Job Finder GPT",
+      url: "https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt",
+      description: "Discover job opportunities tailored to your skills and preferences",
+    },
+    {
       name: "More AI Tools",
       url: "https://www.aiwebtools.ai",
       description: "Explore our full suite of AI productivity tools",

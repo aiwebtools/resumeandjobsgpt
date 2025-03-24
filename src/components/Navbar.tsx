@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -22,7 +21,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Resume Enhancer GPT", url: "https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt" },
     { name: "Resume Specialist GPT", url: "https://chatgpt.com/g/g-3RPD1GkR4-resume-specialist-gpt" },
-    { name: "FAQ", url: "#faq" },
+    { name: "Job Finder GPT", url: "https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt" },
     { name: "Disclaimer", url: "#disclaimer" },
     { name: "More AI Tools", url: "https://www.aiwebtools.ai" },
   ];
