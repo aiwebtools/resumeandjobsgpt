@@ -131,7 +131,7 @@ const SupportChat = () => {
       text: message,
       timestamp: new Date(),
     };
-    setChatHistory([...chatHistory, userMessage]);
+    setChatHistory((prev) => [...prev, userMessage]);
     setMessage("");
 
     // Show typing indicator
