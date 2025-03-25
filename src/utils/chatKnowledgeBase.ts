@@ -9,14 +9,16 @@ export const knowledgeBase = {
   "resume specialist": [
     "Resume Specialist GPT offers comprehensive guidance on creating professional resumes with optimal formatting and structure. 📄",
     "It provides industry-specific advice on resume best practices, helping you stand out in your field. 🏆",
-    "Unlike Resume Enhancer, Resume Specialist focuses more on general resume creation and formatting rather than job-specific tailoring. 📋",
-    "It helps with crafting powerful resume sections like summaries, skills lists, and achievements that highlight your qualifications. 💼"
+    "Resume Specialist asks detailed questions about your education, work experience, skills, and other relevant information to create a well-structured resume. 📋",
+    "After gathering all necessary information, it organizes everything into a polished, professional resume format that you can download as a document. 💼",
+    "It offers to make iterations and improvements to your resume until it perfectly matches your needs and career goals. 🌟"
   ],
   "job finder": [
-    "Job Finder GPT helps you discover job opportunities that match your skills, experience, and preferences. 🔎",
-    "It provides insights on job market trends, salary expectations, and application strategies for different positions. 📊",
-    "Unlike the resume tools, Job Finder focuses on the actual job search, application process, and interview preparation. 🚀",
-    "It can help you research companies, prepare for interviews, and create follow-up messages after applications or interviews. 📨"
+    "Job Finder GPT is a deployable job search robot and career assistant that helps you find real-time active job listings across all industries based on your preferences. 🔎",
+    "It begins by asking about your zip code, resume availability, job title preference, location preferences, salary expectations, and work arrangement preferences. 📊",
+    "After gathering your information, it performs extensive web searches across multiple job platforms including Indeed, LinkedIn, ZipRecruiter, and more. 🚀",
+    "It presents job matches in a clean, formatted layout with details about the position, company, location, salary, and application links. 📨",
+    "It offers to help adjust your resume for each application, create custom cover letters, prepare for interviews, and track your job applications. 🌟"
   ],
   "differences": [
     "Resume Enhancer GPT specializes in tailoring existing resumes for specific job applications, while Resume Specialist GPT offers broader resume creation and formatting expertise. ✅",

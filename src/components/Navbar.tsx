@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
@@ -54,7 +53,7 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-semibold text-white text-xl">Resume Enhancer GPT</span>
+                <span className="font-display font-semibold text-white text-xl">RESUME GPT</span>
                 <span className="text-xs text-cyber-primary-purple/80">Presented by AiWebTools.Ai</span>
               </div>
             </a>
@@ -121,16 +120,18 @@ const Navbar = () => {
                   href={link.url}
                   className="inline-block"
                 >
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 h-12 w-12 p-0 flex items-center justify-center rounded-md"
-                  >
-                    <Sparkles className="h-5 w-5" />
-                  </Button>
-                  <span className="block text-xs text-center mt-1 text-white">
-                    {link.name}
-                  </span>
+                  <div className="flex flex-col items-center">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 h-12 w-12 p-0 flex items-center justify-center rounded-md mb-1"
+                    >
+                      <Sparkles className="h-5 w-5" />
+                    </Button>
+                    <span className="block text-xs text-center mt-1 text-white w-24 truncate">
+                      {link.name}
+                    </span>
+                  </div>
                 </a>
               ))}
             </div>

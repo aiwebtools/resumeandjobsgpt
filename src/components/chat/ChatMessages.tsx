@@ -1,11 +1,7 @@
 
-import React, { useEffect, useRef } from "react";
-
-type ChatMessage = {
-  sender: string;
-  text: string;
-  timestamp: Date;
-};
+import React, { useRef, useEffect } from "react";
+import { MessageCircle } from "lucide-react";
+import { ChatMessage } from "../../types/chat";
 
 interface ChatMessagesProps {
   chatHistory: ChatMessage[];
@@ -13,67 +9,67 @@ interface ChatMessagesProps {
 }
 
 const ChatMessages: React.FC<ChatMessagesProps> = ({ chatHistory, isTyping }) => {
-  const chatContainerRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Scroll to bottom of chat when new messages are added
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   useEffect(() => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-    }
+    scrollToBottom();
   }, [chatHistory, isTyping]);
 
-  // Function to safely render HTML content with blue links
-  const renderMessageWithLinks = (text: string) => {
-    // Add a style to make links blue and underlined on hover
-    const linkedText = text.replace(
-      /<a\s+href=/g, 
-      '<a style="color: #33C3F0; text-decoration: none; font-weight: 500;" class="hover:underline" href='
-    );
-    return { __html: linkedText };
+  // Parse links in messages to make them clickable
+  const renderMessageText = (text: string) => {
+    return {
+      __html: text
+        // Style links to be blue with underline on hover
+        .replace(/<a /g, '<a style="color: #33C3F0; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'" ')
+        // Make sure all links open in a new tab
+        .replace(/<a /g, '<a target="_blank" rel="noopener noreferrer" ')
+    };
   };
 
   return (
-    <div 
-      ref={chatContainerRef}
-      className="flex-1 p-4 overflow-y-auto h-[350px] scrollbar-none"
-    >
-      {chatHistory.map((msg, index) => (
+    <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      {chatHistory.map((message, index) => (
         <div
           key={index}
-          className={`mb-3 flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
+          className={`flex ${
+            message.sender === "user" ? "justify-end" : "justify-start"
+          }`}
         >
           <div
-            className={`max-w-[80%] rounded-lg p-3 ${
-              msg.sender === "user"
-                ? "bg-cyber-primary-purple/30 text-white"
-                : "bg-cyber-dark-purple/60 border border-white/10 text-gray-200"
+            className={`max-w-[80%] rounded-lg px-4 py-2 ${
+              message.sender === "user"
+                ? "bg-cyber-primary-purple text-white"
+                : "bg-gray-700 text-white"
             }`}
           >
-            {msg.sender === "bot" ? (
-              <p 
-                className="text-sm" 
-                dangerouslySetInnerHTML={renderMessageWithLinks(msg.text)}
-              />
-            ) : (
-              <p className="text-sm">{msg.text}</p>
-            )}
-            <p className="text-xs opacity-50 mt-1 text-right">
-              {msg.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-            </p>
+            <div
+              dangerouslySetInnerHTML={renderMessageText(message.text)}
+              className="text-sm"
+            />
           </div>
         </div>
       ))}
+
       {isTyping && (
-        <div className="mb-3 flex justify-start">
-          <div className="max-w-[80%] rounded-lg p-3 bg-cyber-dark-purple/60 border border-white/10 text-gray-200">
-            <div className="flex space-x-1">
-              <div className="w-2 h-2 rounded-full bg-cyber-primary-purple/70 animate-bounce" style={{ animationDelay: "0ms" }}></div>
-              <div className="w-2 h-2 rounded-full bg-cyber-primary-purple/70 animate-bounce" style={{ animationDelay: "150ms" }}></div>
-              <div className="w-2 h-2 rounded-full bg-cyber-primary-purple/70 animate-bounce" style={{ animationDelay: "300ms" }}></div>
+        <div className="flex justify-start">
+          <div className="bg-gray-700 rounded-lg px-4 py-2 text-white max-w-[80%]">
+            <div className="flex items-center space-x-2">
+              <MessageCircle size={14} />
+              <span className="text-sm">Typing</span>
+              <span className="typing-animation">
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+              </span>
             </div>
           </div>
         </div>
       )}
+      <div ref={messagesEndRef} />
     </div>
   );
 };
