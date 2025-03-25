@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { MessageSquare } from "lucide-react";
 import ChatHeader from "./chat/ChatHeader";
@@ -87,19 +86,19 @@ const SupportChat = () => {
       {/* Chat Button */}
       <button
         onClick={toggleChat}
-        className={`flex items-center justify-center w-14 h-14 rounded-full text-white shadow-neon-glow transition-all ${
+        className={`flex items-center justify-center w-12 h-12 rounded-full text-white shadow-neon-glow transition-all ${
           isOpen ? "bg-cyber-primary-purple" : "bg-cyber-neon-blue animate-pulse-glow"
         }`}
         aria-label="Chat Support"
       >
-        {isOpen ? <MessageSquare size={20} /> : <MessageSquare size={20} />}
+        <MessageSquare size={18} />
       </button>
 
       {/* Chat Window */}
       {isOpen && (
         <div
-          className={`absolute bottom-16 right-0 w-80 sm:w-96 transition-all duration-300 transform glass-card border border-white/10 overflow-hidden shadow-lg ${
-            isMinimized ? "h-12" : "h-[450px]"
+          className={`absolute bottom-16 right-0 w-72 sm:w-80 transition-all duration-300 transform glass-card border border-white/10 overflow-hidden shadow-lg ${
+            isMinimized ? "h-12" : "h-[400px]"
           }`}
         >
           <ChatHeader 
