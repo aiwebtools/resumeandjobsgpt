@@ -14,7 +14,7 @@ const SupportChat = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([
     {
       sender: "bot",
-      text: "Hello! I'm the AI Web Tools support assistant. How can I help you with Resume Enhancer GPT today?",
+      text: "Hello! I'm the AI Web Tools support assistant. How can I help you with Resume Enhancer GPT today? 😊",
       timestamp: new Date(),
     },
   ]);
@@ -59,7 +59,7 @@ const SupportChat = () => {
           ...prev,
           {
             sender: "bot",
-            text: "I'm sorry, there was an error connecting to the AI service. Please try again later.",
+            text: "I'm sorry, there was an error connecting to the AI service. Please try again later. 😕",
             timestamp: new Date(),
           },
         ]);

@@ -24,29 +24,41 @@ export const generateResponse = (userMessage: string): string => {
   else if (normalizedMessage.includes("legal") || normalizedMessage.includes("disclaimer") || normalizedMessage.includes("terms") || normalizedMessage.includes("privacy") || normalizedMessage.includes("liability")) {
     response = knowledgeBase["legal"][Math.floor(Math.random() * knowledgeBase["legal"].length)];
   }
+  else if (normalizedMessage.includes("company") || normalizedMessage.includes("about") || normalizedMessage.includes("who are you") || normalizedMessage.includes("background")) {
+    response = knowledgeBase["company"][Math.floor(Math.random() * knowledgeBase["company"].length)];
+  }
   else if (normalizedMessage.includes("hello") || normalizedMessage.includes("hi") || normalizedMessage.includes("hey")) {
-    response = "Hello! I'm the AI Web Tools support assistant. How can I help you with Resume Enhancer GPT today?";
+    response = "Hello! I'm the AI Web Tools support assistant. How can I help you with Resume Enhancer GPT today? 😊";
   }
   else if (normalizedMessage.includes("thank")) {
-    response = "You're welcome! Is there anything else I can help you with regarding our AI Web Tools?";
+    response = "You're welcome! Is there anything else I can help you with regarding our AI Web Tools? ✨";
   }
   else if (normalizedMessage.includes("cost") || normalizedMessage.includes("price") || normalizedMessage.includes("subscription") || normalizedMessage.includes("pay")) {
-    response = "Resume Enhancer GPT is available through ChatGPT. You would need a ChatGPT subscription to access all of our advanced AI tools. Visit https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt for more details.";
+    response = "Resume Enhancer GPT is available through ChatGPT. You would need a ChatGPT subscription to access all of our advanced AI tools. Visit <a href='https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt'>Resume Enhancer GPT</a> for more details. 💰";
   }
   else if (normalizedMessage.includes("download") || normalizedMessage.includes("format") || normalizedMessage.includes("file") || normalizedMessage.includes("word")) {
-    response = "Your enhanced resume and cover letter will be available for download in a professionally formatted Word document, ready to submit to potential employers.";
+    response = "Your enhanced resume and cover letter will be available for download in a professionally formatted Word document, ready to submit to potential employers. 📄";
   }
   else if (normalizedMessage.includes("cover letter") || normalizedMessage.includes("letter")) {
-    response = "Resume Enhancer GPT also creates a customized cover letter that complements your enhanced resume and is specifically tailored to your target position and company.";
+    response = "Resume Enhancer GPT also creates a customized cover letter that complements your enhanced resume and is specifically tailored to your target position and company. ✉️";
+  }
+  else if (normalizedMessage.includes("job finder") || normalizedMessage.includes("find job")) {
+    response = knowledgeBase["job finder"][Math.floor(Math.random() * knowledgeBase["job finder"].length)];
+  }
+  else if (normalizedMessage.includes("difference") || normalizedMessage.includes("compare") || normalizedMessage.includes("vs") || normalizedMessage.includes("versus")) {
+    response = knowledgeBase["differences"][Math.floor(Math.random() * knowledgeBase["differences"].length)];
+  }
+  else if (normalizedMessage.includes("specialist") || normalizedMessage.includes("resume specialist")) {
+    response = knowledgeBase["resume specialist"][Math.floor(Math.random() * knowledgeBase["resume specialist"].length)];
   }
   else {
     // Default responses for messages that don't match specific patterns
     const defaultResponses = [
-      "Resume Enhancer GPT helps optimize your resume for specific job applications by analyzing your current resume and suggesting tailored improvements.",
-      "Our AI tools use advanced natural language processing to create professional, ATS-friendly resumes that highlight your relevant skills and experiences.",
-      "For more specific information about our Resume Enhancer GPT, please visit https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt or contact us at Contact@ai-webtools.com.",
-      "We have multiple AI tools available at www.aiwebtools.ai to help with various career and productivity needs.",
-      "Is there anything specific about resume enhancement or our other AI tools that you'd like to know more about?"
+      "Resume Enhancer GPT helps optimize your resume for specific job applications! Check it out at <a href='https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt'>Resume Enhancer GPT</a> ✨",
+      "Our AI tools use advanced natural language processing to create professional, ATS-friendly resumes that highlight your relevant skills and experiences! 🚀",
+      "For more specific information about our Resume Enhancer GPT, please visit <a href='https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt'>Resume Enhancer GPT</a> or contact us at <a href='mailto:Contact@ai-webtools.com'>Contact@ai-webtools.com</a>. 📧",
+      "We have multiple AI tools available at <a href='https://www.aiwebtools.ai'>www.aiwebtools.ai</a> to help with various career and productivity needs! 🌟",
+      "Is there anything specific about resume enhancement or our other AI tools that you'd like to know more about? I'm here to help! 😊"
     ];
     response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
   }

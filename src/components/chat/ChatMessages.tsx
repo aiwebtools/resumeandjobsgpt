@@ -22,6 +22,11 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ chatHistory, isTyping }) =>
     }
   }, [chatHistory, isTyping]);
 
+  // Function to safely render HTML content
+  const renderMessageWithLinks = (text: string) => {
+    return { __html: text };
+  };
+
   return (
     <div 
       ref={chatContainerRef}
@@ -39,7 +44,14 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ chatHistory, isTyping }) =>
                 : "bg-cyber-dark-purple/60 border border-white/10 text-gray-200"
             }`}
           >
-            <p className="text-sm">{msg.text}</p>
+            {msg.sender === "bot" ? (
+              <p 
+                className="text-sm" 
+                dangerouslySetInnerHTML={renderMessageWithLinks(msg.text)}
+              />
+            ) : (
+              <p className="text-sm">{msg.text}</p>
+            )}
             <p className="text-xs opacity-50 mt-1 text-right">
               {msg.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
             </p>
