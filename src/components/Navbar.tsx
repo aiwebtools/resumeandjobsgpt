@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
@@ -128,7 +129,7 @@ const Navbar = () => {
                     <Sparkles className="h-5 w-5" />
                   </Button>
                   <span className="block text-xs text-center mt-1 text-white">
-                    {link.name.split(' ')[0]}
+                    {link.name}
                   </span>
                 </a>
               ))}
