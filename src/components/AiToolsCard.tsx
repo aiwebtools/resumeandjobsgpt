@@ -42,6 +42,7 @@ const AiToolsCard = () => {
             </p>
           </div>
           
+          {/* Moved image up, before the tools grid */}
           <div className="relative mb-12">
             <div className="relative z-10 rounded-lg overflow-hidden border border-white/10 hover:border-cyber-primary-purple/50 transition-all duration-300">
               <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="block relative group">
