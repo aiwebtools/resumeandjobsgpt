@@ -16,7 +16,7 @@ import JobFinderSection from "../components/JobFinderSection";
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = "Resume GPT | AI-Powered Resume Optimization";
+    document.title = "Resume & Job Finder AI Suite | Career Advancement Tools";
   }, []);
 
   return (

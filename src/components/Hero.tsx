@@ -17,15 +17,15 @@ const Hero = () => {
             <div className="inline-block px-3 py-1 rounded-full bg-cyber-primary-purple/10 border border-cyber-primary-purple/30 text-cyber-primary-purple text-sm font-medium mb-5">
               <span className="flex items-center gap-1">
                 <Zap size={14} className="text-cyber-neon-yellow" />
-                AI-Powered Resume Enhancement
+                Complete Career Advancement AI Suite
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-6">
-              Transform Your <span className="cyber-gradient-text">Resume</span> Into an
-              <span className="cyber-gradient-text"> Interview Magnet</span>
+              Elevate Your <span className="cyber-gradient-text">Career</span> With Our
+              <span className="cyber-gradient-text"> AI Tools Suite</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Our AI analyzes your resume, tailors it to specific job opportunities, and enhances it with targeted skills and achievements to maximize your chances of landing interviews.
+              Our comprehensive AI Suite helps you optimize your resume, create tailored cover letters, and find the perfect job opportunities - all powered by advanced AI technology to maximize your career potential.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-10">
@@ -33,20 +33,20 @@ const Hero = () => {
                 href="https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt"
                 className="cyber-button group"
               >
-                <span className="relative z-10">Try Resume Enhancer GPT</span>
+                <span className="relative z-10">Try Our AI Suite</span>
                 <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#how-it-works"
                 className="px-6 py-3 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
               >
-                Learn How It Works
+                Explore Our Tools
               </a>
             </div>
 
             {/* Features Pills */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-              {["Job-Specific Tailoring", "AI-Powered Enhancements", "Professional Formatting", "Cover Letter Creation"].map((feature) => (
+              {["Resume Enhancement", "Resume Creation", "Job Finding", "Cover Letters", "Interview Prep"].map((feature) => (
                 <div
                   key={feature}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyber-dark border border-white/10 text-sm text-gray-300"
@@ -69,7 +69,7 @@ const Hero = () => {
                       <div className="w-3 h-3 rounded-full bg-red-400"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                       <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                      <div className="ml-4 text-xs text-gray-400">Resume Enhancer GPT</div>
+                      <div className="ml-4 text-xs text-gray-400">Resume & Job Finder AI Suite</div>
                     </div>
 
                     <div className="space-y-3">
@@ -78,13 +78,13 @@ const Hero = () => {
                           AI
                         </div>
                         <div className="bg-cyber-card-bg rounded-lg p-3 text-sm text-left">
-                          <p>I'll help you enhance your resume for the specific job you're targeting. What position are you applying for?</p>
+                          <p>Which of our AI tools would you like to use today? We have Resume Enhancer, Resume Specialist, and Job Finder to help advance your career.</p>
                         </div>
                       </div>
 
                       <div className="flex gap-3 items-start justify-end">
                         <div className="bg-cyber-primary-purple/20 border border-cyber-primary-purple/30 rounded-lg p-3 text-sm text-left">
-                          <p>I'm applying for a Senior Product Manager position at Tesla.</p>
+                          <p>I'm looking for a new job in the tech industry. Can you help me find opportunities?</p>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold flex-shrink-0">
                           U
@@ -96,7 +96,7 @@ const Hero = () => {
                           AI
                         </div>
                         <div className="bg-cyber-card-bg rounded-lg p-3 text-sm text-left">
-                          <p>Great! I'll research Tesla's Product Manager requirements and tailor your resume accordingly. Let me analyze your current resume...</p>
+                          <p>I'll help you find tech jobs with our Job Finder GPT. Let me also optimize your resume with Resume Enhancer GPT to increase your chances!</p>
                         </div>
                       </div>
 

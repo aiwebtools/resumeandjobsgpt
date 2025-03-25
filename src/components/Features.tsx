@@ -1,38 +1,38 @@
 
 import React from "react";
-import { FileText, Search, Edit, Download, FileCheck, FileSpreadsheet } from "lucide-react";
+import { FileText, Search, Edit, Download, FileCheck, FileSpreadsheet, BriefcaseBusiness, MessagesSquare } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
       icon: <FileText className="h-6 w-6 text-cyber-neon-blue" />,
-      title: "Resume Transcription",
-      description: "Our AI accurately transcribes your complete resume, capturing all details including job history, references, and other critical information.",
+      title: "Resume Enhancement",
+      description: "Our AI accurately tailors your resume for specific job applications, highlighting relevant skills and experiences to maximize your chances of getting interviews.",
     },
     {
-      icon: <Search className="h-6 w-6 text-cyber-neon-pink" />,
-      title: "Job-Specific Research",
-      description: "Web research on your target job and company to gather insights about requirements, culture, and values for tailored enhancements.",
+      icon: <Edit className="h-6 w-6 text-cyber-neon-pink" />,
+      title: "Resume Creation",
+      description: "Build a professional resume from scratch with industry-specific formatting and content guidance from our Resume Specialist GPT.",
     },
     {
-      icon: <Edit className="h-6 w-6 text-cyber-neon-green" />,
-      title: "Strategic Enhancement",
-      description: "Expertly expand skills, experiences, and achievements that align with job requirements while preserving your original resume's integrity.",
+      icon: <Search className="h-6 w-6 text-cyber-neon-green" />,
+      title: "Job Discovery",
+      description: "Our Job Finder GPT searches multiple job platforms to find opportunities matching your preferences, location, and salary expectations.",
     },
     {
-      icon: <FileCheck className="h-6 w-6 text-cyber-neon-yellow" />,
-      title: "Complete Rewrite",
-      description: "After your approval, we provide a comprehensive rewrite that integrates all enhancements while maintaining your original information.",
+      icon: <FileSpreadsheet className="h-6 w-6 text-cyber-neon-yellow" />,
+      title: "Cover Letter Creation",
+      description: "Generate tailored cover letters that complement your resume and highlight your qualifications for specific roles and companies.",
     },
     {
-      icon: <Download className="h-6 w-6 text-cyber-primary-purple" />,
-      title: "Downloadable Documents",
-      description: "Get your enhanced resume in a professionally formatted Word document, ready to submit to potential employers.",
+      icon: <MessagesSquare className="h-6 w-6 text-cyber-primary-purple" />,
+      title: "Interview Preparation",
+      description: "Practice with AI-powered mock interviews featuring job-specific questions and receive feedback to improve your performance.",
     },
     {
-      icon: <FileSpreadsheet className="h-6 w-6 text-cyber-neon-blue" />,
-      title: "Custom Cover Letter",
-      description: "Receive a perfectly aligned cover letter that complements your enhanced resume and highlights your qualifications for the specific role.",
+      icon: <BriefcaseBusiness className="h-6 w-6 text-cyber-neon-blue" />,
+      title: "Application Tracking",
+      description: "Keep track of your job applications, interviews, and follow-ups to stay organized throughout your job search process.",
     },
   ];
 
@@ -42,10 +42,10 @@ const Features = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-            Advanced <span className="cyber-gradient-text">AI-Powered</span> Features
+            Complete <span className="cyber-gradient-text">AI-Powered</span> Career Tools
           </h2>
           <p className="text-gray-300 text-lg">
-            Resume Enhancer GPT goes beyond basic editing to transform your resume into a powerful tool for job hunting success.
+            Our comprehensive suite of AI tools helps you at every stage of your job search journey - from creating resumes to finding and landing your dream job.
           </p>
         </div>
 
