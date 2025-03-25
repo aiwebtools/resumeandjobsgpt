@@ -28,19 +28,54 @@ const Hero = () => {
               Our comprehensive AI Suite helps you optimize your resume, create tailored cover letters, and find the perfect job opportunities - all powered by advanced AI technology to maximize your career potential.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-10">
+            {/* Three AI Tool Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+              {/* Resume Enhancer Button */}
               <a
                 href="https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt"
-                className="cyber-button group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white rounded-lg p-[1px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(56,189,248,0.5)]"
               >
-                <span className="relative z-10">Try Our AI Suite</span>
-                <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <div className="h-full w-full px-4 py-3 rounded-lg bg-cyber-dark/90 backdrop-blur-sm flex flex-col items-center justify-center transition-all">
+                  <span className="font-bold mb-1">Try Resume Enhancer GPT</span>
+                  <span className="text-xs text-cyan-300 flex items-center gap-1">
+                    <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                    <span>NOW</span>
+                  </span>
+                </div>
               </a>
+              
+              {/* Resume Specialist Button */}
               <a
-                href="#how-it-works"
-                className="px-6 py-3 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                href="https://chatgpt.com/g/g-3RPD1GkR4-resume-specialist-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg p-[1px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(217,70,239,0.5)]"
               >
-                Explore Our Tools
+                <div className="h-full w-full px-4 py-3 rounded-lg bg-cyber-dark/90 backdrop-blur-sm flex flex-col items-center justify-center transition-all">
+                  <span className="font-bold mb-1">Try Resume Specialist GPT</span>
+                  <span className="text-xs text-pink-300 flex items-center gap-1">
+                    <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                    <span>NOW</span>
+                  </span>
+                </div>
+              </a>
+              
+              {/* Job Finder Button */}
+              <a
+                href="https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-600 hover:to-emerald-500 text-white rounded-lg p-[1px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]"
+              >
+                <div className="h-full w-full px-4 py-3 rounded-lg bg-cyber-dark/90 backdrop-blur-sm flex flex-col items-center justify-center transition-all">
+                  <span className="font-bold mb-1">Try Job Finder GPT</span>
+                  <span className="text-xs text-emerald-300 flex items-center gap-1">
+                    <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                    <span>NOW</span>
+                  </span>
+                </div>
               </a>
             </div>
 
