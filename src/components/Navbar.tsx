@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
+import { useIsMobile } from "../hooks/use-mobile";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +56,12 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-semibold text-white text-xl">RESUME & JOB FINDER AI SUITE</span>
-                <span className="text-xs text-cyber-primary-purple/80">Presented by AiWebTools.Ai</span>
+                <span className={`font-display font-semibold text-white ${isMobile ? "text-sm" : "text-xl"} whitespace-nowrap`}>
+                  RESUME & JOB FINDER AI SUITE
+                </span>
+                <span className={`${isMobile ? "text-xs" : "text-xs"} text-cyber-primary-purple/80`}>
+                  Presented by AiWebTools.Ai
+                </span>
               </div>
             </a>
           </div>
