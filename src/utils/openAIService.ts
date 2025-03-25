@@ -3,7 +3,8 @@ import { OpenAIConfig } from "../types/chat";
 
 // Store the API key in memory (not persistent across refreshes)
 let openAIConfig: OpenAIConfig = {
-  apiKey: null
+  // Replace this string with your actual OpenAI API key
+  apiKey: "your-openai-api-key-here"
 };
 
 export const setOpenAIKey = (apiKey: string) => {
@@ -14,13 +15,6 @@ export const setOpenAIKey = (apiKey: string) => {
 };
 
 export const getOpenAIKey = (): string | null => {
-  // If no key in memory, try to get from localStorage
-  if (!openAIConfig.apiKey) {
-    const storedKey = localStorage.getItem('openai_api_key');
-    if (storedKey) {
-      openAIConfig.apiKey = storedKey;
-    }
-  }
   return openAIConfig.apiKey;
 };
 
@@ -32,7 +26,7 @@ export const generateAIResponse = async (prompt: string): Promise<string> => {
   const apiKey = getOpenAIKey();
   
   if (!apiKey) {
-    return "Please set your OpenAI API key to enable AI responses.";
+    return "OpenAI API key is not configured correctly.";
   }
   
   try {

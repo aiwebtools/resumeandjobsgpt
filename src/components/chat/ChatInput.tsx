@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Send } from "lucide-react";
-import { hasOpenAIKey } from "@/utils/openAIService";
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
@@ -26,7 +25,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isProcessing }) =>
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder={hasOpenAIKey() ? "Type your message..." : "Set OpenAI API key to enable smart responses..."}
+          placeholder="Type your message..."
           className="flex-1 bg-cyber-dark/50 border border-white/10 rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-cyber-primary-purple"
           disabled={isProcessing}
         />

@@ -4,7 +4,6 @@ import { MessageSquare } from "lucide-react";
 import ChatHeader from "./chat/ChatHeader";
 import ChatMessages from "./chat/ChatMessages";
 import ChatInput from "./chat/ChatInput";
-import OpenAIKeyInput from "./chat/OpenAIKeyInput";
 import { ChatMessage } from "../types/chat";
 import { hasOpenAIKey, generateAIResponse } from "../utils/openAIService";
 import { generateResponse } from "../utils/chatResponseGenerator";
@@ -20,12 +19,6 @@ const SupportChat = () => {
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
-  const [hasKey, setHasKey] = useState(hasOpenAIKey());
-
-  useEffect(() => {
-    // Check if OpenAI key is available
-    setHasKey(hasOpenAIKey());
-  }, []);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -34,18 +27,6 @@ const SupportChat = () => {
 
   const toggleMinimize = () => {
     setIsMinimized(!isMinimized);
-  };
-
-  const handleKeySet = () => {
-    setHasKey(true);
-    setChatHistory(prev => [
-      ...prev,
-      {
-        sender: "bot",
-        text: "Thank you for setting up your OpenAI API key! I can now provide you with more intelligent responses about AI Web Tools and Resume Enhancer GPT. How can I assist you today?",
-        timestamp: new Date(),
-      }
-    ]);
   };
 
   const handleSendMessage = async (message: string) => {
@@ -129,8 +110,6 @@ const SupportChat = () => {
 
           {!isMinimized && (
             <>
-              {!hasKey && <OpenAIKeyInput onKeySet={handleKeySet} />}
-              
               <ChatMessages 
                 chatHistory={chatHistory} 
                 isTyping={isTyping} 
