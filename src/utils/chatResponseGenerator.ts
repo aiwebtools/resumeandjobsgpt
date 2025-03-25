@@ -6,7 +6,10 @@ export const generateResponse = (userMessage: string): string => {
   let response = "";
 
   // Check if the message contains certain keywords and generate appropriate responses
-  if (normalizedMessage.includes("resume") && (normalizedMessage.includes("enhance") || normalizedMessage.includes("improvement") || normalizedMessage.includes("optimize"))) {
+  if (normalizedMessage.includes("suite") || normalizedMessage.includes("ai suite") || normalizedMessage.includes("resume & job finder") || normalizedMessage.includes("resume and job finder")) {
+    response = knowledgeBase["suite"][Math.floor(Math.random() * knowledgeBase["suite"].length)];
+  }
+  else if (normalizedMessage.includes("resume") && (normalizedMessage.includes("enhance") || normalizedMessage.includes("improvement") || normalizedMessage.includes("optimize"))) {
     response = knowledgeBase["resume enhancer"][Math.floor(Math.random() * knowledgeBase["resume enhancer"].length)];
   } 
   else if (normalizedMessage.includes("feature") || normalizedMessage.includes("what can") || normalizedMessage.includes("capabilities") || normalizedMessage.includes("do for me")) {
@@ -28,13 +31,13 @@ export const generateResponse = (userMessage: string): string => {
     response = knowledgeBase["company"][Math.floor(Math.random() * knowledgeBase["company"].length)];
   }
   else if (normalizedMessage.includes("hello") || normalizedMessage.includes("hi") || normalizedMessage.includes("hey")) {
-    response = "Hello! I'm the AI Web Tools support assistant. How can I help you with our AI tools today? 😊";
+    response = "Hello! I'm the AI Web Tools support assistant. How can I help you with our Resume & Job Finder AI Suite today? 😊";
   }
   else if (normalizedMessage.includes("thank")) {
-    response = "You're welcome! Is there anything else I can help you with regarding our AI Web Tools? ✨";
+    response = "You're welcome! Is there anything else I can help you with regarding our Resume & Job Finder AI Suite? ✨";
   }
   else if (normalizedMessage.includes("cost") || normalizedMessage.includes("price") || normalizedMessage.includes("subscription") || normalizedMessage.includes("pay")) {
-    response = "Our AI tools are available through ChatGPT. You would need a ChatGPT subscription to access all of our advanced AI tools. Visit <a href='https://www.aiwebtools.ai'>www.aiwebtools.ai</a> for more details. 💰";
+    response = "Our AI tools are available through ChatGPT. You would need a ChatGPT subscription to access all of our advanced AI tools in the Resume & Job Finder AI Suite. Visit <a href='https://www.aiwebtools.ai'>www.aiwebtools.ai</a> for more details. 💰";
   }
   else if (normalizedMessage.includes("download") || normalizedMessage.includes("format") || normalizedMessage.includes("file") || normalizedMessage.includes("word")) {
     response = "Our AI tools can provide downloadable documents in professionally formatted Word format, ready to submit to potential employers. 📄";
@@ -54,11 +57,11 @@ export const generateResponse = (userMessage: string): string => {
   else {
     // Default responses for messages that don't match specific patterns
     const defaultResponses = [
-      "Resume GPT helps optimize your resume for specific job applications! Check it out at <a href='https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt'>Resume Enhancer GPT</a> ✨",
+      "The Resume & Job Finder AI Suite helps optimize your resume and find jobs! Check out Resume Enhancer GPT at <a href='https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt'>Resume Enhancer GPT</a> ✨",
       "Our AI tools use advanced natural language processing to create professional, ATS-friendly resumes that highlight your relevant skills and experiences! 🚀",
-      "For more specific information about our tools, please visit <a href='https://www.aiwebtools.ai'>www.aiwebtools.ai</a> or contact us at <a href='mailto:Contact@ai-webtools.com'>Contact@ai-webtools.com</a>. 📧",
-      "We have multiple AI tools available to help with various career and productivity needs! Check the <a href='#job-finder'>Job Finder GPT</a> and <a href='#resume-specialist'>Resume Specialist GPT</a> sections for more information. 🌟",
-      "Is there anything specific about our AI tools that you'd like to know more about? I'm here to help! 😊"
+      "For more specific information about our tools in the Resume & Job Finder AI Suite, please visit <a href='https://www.aiwebtools.ai'>www.aiwebtools.ai</a> or contact us at <a href='mailto:Contact@ai-webtools.com'>Contact@ai-webtools.com</a>. 📧",
+      "We have multiple AI tools available in our suite to help with various career and productivity needs! Check the <a href='#job-finder'>Job Finder GPT</a> and <a href='#resume-specialist'>Resume Specialist GPT</a> sections for more information. 🌟",
+      "Is there anything specific about our Resume & Job Finder AI Suite that you'd like to know more about? I'm here to help! 😊"
     ];
     response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
   }

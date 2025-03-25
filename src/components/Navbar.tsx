@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
@@ -53,7 +54,7 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-semibold text-white text-xl">RESUME GPT</span>
+                <span className="font-display font-semibold text-white text-xl">RESUME & JOB FINDER AI SUITE</span>
                 <span className="text-xs text-cyber-primary-purple/80">Presented by AiWebTools.Ai</span>
               </div>
             </a>

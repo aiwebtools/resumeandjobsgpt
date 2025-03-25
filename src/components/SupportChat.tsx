@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { MessageSquare } from "lucide-react";
 import ChatHeader from "./chat/ChatHeader";
@@ -13,7 +14,7 @@ const SupportChat = () => {
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([
     {
       sender: "bot",
-      text: "Hello! I'm the AI Web Tools support assistant. How can I help you with Resume Enhancer GPT today? 😊",
+      text: "Hello! I'm the AI Web Tools support assistant. How can I help you with the Resume & Job Finder AI Suite today? 😊",
       timestamp: new Date(),
     },
   ]);
