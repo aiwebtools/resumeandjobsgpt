@@ -4,3 +4,7 @@ export type ChatMessage = {
   text: string;
   timestamp: Date;
 };
+
+export type OpenAIConfig = {
+  apiKey: string | null;
+};

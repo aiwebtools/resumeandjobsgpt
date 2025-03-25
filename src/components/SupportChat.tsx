@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from "react";
 import { MessageSquare } from "lucide-react";
-import { generateResponse } from "../utils/chatResponseGenerator";
 import ChatHeader from "./chat/ChatHeader";
 import ChatMessages from "./chat/ChatMessages";
 import ChatInput from "./chat/ChatInput";
+import OpenAIKeyInput from "./chat/OpenAIKeyInput";
 import { ChatMessage } from "../types/chat";
+import { hasOpenAIKey, generateAIResponse } from "../utils/openAIService";
+import { generateResponse } from "../utils/chatResponseGenerator";
 
 const SupportChat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +20,12 @@ const SupportChat = () => {
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
+  const [hasKey, setHasKey] = useState(hasOpenAIKey());
+
+  useEffect(() => {
+    // Check if OpenAI key is available
+    setHasKey(hasOpenAIKey());
+  }, []);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -28,7 +36,19 @@ const SupportChat = () => {
     setIsMinimized(!isMinimized);
   };
 
-  const handleSendMessage = (message: string) => {
+  const handleKeySet = () => {
+    setHasKey(true);
+    setChatHistory(prev => [
+      ...prev,
+      {
+        sender: "bot",
+        text: "Thank you for setting up your OpenAI API key! I can now provide you with more intelligent responses about AI Web Tools and Resume Enhancer GPT. How can I assist you today?",
+        timestamp: new Date(),
+      }
+    ]);
+  };
+
+  const handleSendMessage = async (message: string) => {
     // Add user message to chat
     const userMessage = {
       sender: "user",
@@ -40,19 +60,45 @@ const SupportChat = () => {
     // Show typing indicator
     setIsTyping(true);
 
-    // Generate AI response with slight delay to simulate thinking
-    setTimeout(() => {
-      const aiResponse = generateResponse(userMessage.text);
-      setChatHistory((prev) => [
-        ...prev,
-        {
-          sender: "bot",
-          text: aiResponse,
-          timestamp: new Date(),
-        },
-      ]);
-      setIsTyping(false);
-    }, 1500);
+    if (hasOpenAIKey()) {
+      // Use OpenAI for response generation
+      try {
+        const aiResponse = await generateAIResponse(message);
+        setChatHistory((prev) => [
+          ...prev,
+          {
+            sender: "bot",
+            text: aiResponse,
+            timestamp: new Date(),
+          },
+        ]);
+      } catch (error) {
+        console.error("Error generating AI response:", error);
+        setChatHistory((prev) => [
+          ...prev,
+          {
+            sender: "bot",
+            text: "I'm sorry, there was an error connecting to the AI service. Please try again later.",
+            timestamp: new Date(),
+          },
+        ]);
+      }
+    } else {
+      // Fallback to local knowledge base
+      setTimeout(() => {
+        const aiResponse = generateResponse(userMessage.text);
+        setChatHistory((prev) => [
+          ...prev,
+          {
+            sender: "bot",
+            text: aiResponse,
+            timestamp: new Date(),
+          },
+        ]);
+      }, 1500);
+    }
+
+    setIsTyping(false);
   };
 
   return (
@@ -83,12 +129,17 @@ const SupportChat = () => {
 
           {!isMinimized && (
             <>
+              {!hasKey && <OpenAIKeyInput onKeySet={handleKeySet} />}
+              
               <ChatMessages 
                 chatHistory={chatHistory} 
                 isTyping={isTyping} 
               />
               
-              <ChatInput onSendMessage={handleSendMessage} />
+              <ChatInput 
+                onSendMessage={handleSendMessage} 
+                isProcessing={isTyping} 
+              />
             </>
           )}
         </div>

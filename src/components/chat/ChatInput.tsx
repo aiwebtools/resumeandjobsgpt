@@ -1,17 +1,19 @@
 
 import React, { useState } from "react";
 import { Send } from "lucide-react";
+import { hasOpenAIKey } from "@/utils/openAIService";
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
+  isProcessing: boolean;
 }
 
-const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
+const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isProcessing }) => {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim()) return;
+    if (!message.trim() || isProcessing) return;
     
     onSendMessage(message);
     setMessage("");
@@ -24,13 +26,14 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Type your message..."
+          placeholder={hasOpenAIKey() ? "Type your message..." : "Set OpenAI API key to enable smart responses..."}
           className="flex-1 bg-cyber-dark/50 border border-white/10 rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-cyber-primary-purple"
+          disabled={isProcessing}
         />
         <button
           type="submit"
-          className="bg-cyber-primary-purple text-white p-2 rounded-md hover:bg-cyber-secondary-purple transition-colors"
-          disabled={!message.trim()}
+          className="bg-cyber-primary-purple text-white p-2 rounded-md hover:bg-cyber-secondary-purple transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={!message.trim() || isProcessing}
         >
           <Send size={18} />
         </button>
