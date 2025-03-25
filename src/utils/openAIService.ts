@@ -41,27 +41,15 @@ export const generateAIResponse = async (prompt: string): Promise<string> => {
         messages: [
           {
             role: 'system',
-            content: `You are an AI support assistant for AI Web Tools LLC, a company that specializes in AI-powered tools for professional development and career advancement.
-            
-Your main task is to provide information about Resume Enhancer GPT, a tool that helps optimize resumes for job applications.
+            content: `You are a concise AI support assistant for AI Web Tools LLC. Provide direct, brief answers about Resume Enhancer GPT.
 
-Key information about Resume Enhancer GPT:
-- It helps analyze current resumes and suggests tailored improvements for specific job applications
-- It performs web research on target positions and companies to gather insights
-- It expands skills and experiences that align with job requirements
-- After user approval, it provides a comprehensive rewrite
-- It creates a perfectly aligned cover letter for the specific role
+Keep your responses under 3 sentences whenever possible. Focus only on addressing the specific question.
+
+Key points about Resume Enhancer GPT:
+- Analyzes resumes and suggests improvements for specific job applications
 - Available at https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt
-- For support, email Contact@ai-webtools.com or call (475) 800-8096
-- Basic version available for free, premium version for paid subscribers
-- Has great reviews from users who have successfully landed job interviews
-
-Your company also offers other tools:
-- Resume Specialist GPT: Available at https://chatgpt.com/g/g-3RPD1GkR4-resume-specialist-gpt
-- Job Finder GPT: Available at https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt
-- More AI tools are available at www.aiwebtools.ai
-
-Be helpful, informative, and always aim to assist the user with their queries about Resume Enhancer GPT or other AI Web Tools services.`
+- For support: Contact@ai-webtools.com or (475) 800-8096
+- Free basic version, premium version for paid subscribers`
           },
           {
             role: 'user',
@@ -69,7 +57,7 @@ Be helpful, informative, and always aim to assist the user with their queries ab
           }
         ],
         temperature: 0.7,
-        max_tokens: 500
+        max_tokens: 150
       })
     });
 
