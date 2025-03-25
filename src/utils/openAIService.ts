@@ -3,8 +3,8 @@ import { OpenAIConfig } from "../types/chat";
 
 // Store the API key in memory (not persistent across refreshes)
 let openAIConfig: OpenAIConfig = {
-  // Replace this string with your actual OpenAI API key
-  apiKey: "your-openai-api-key-here"
+  // Replace this with your actual OpenAI API key
+  apiKey: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 };
 
 export const setOpenAIKey = (apiKey: string) => {
