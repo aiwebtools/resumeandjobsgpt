@@ -22,9 +22,14 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ chatHistory, isTyping }) =>
     }
   }, [chatHistory, isTyping]);
 
-  // Function to safely render HTML content
+  // Function to safely render HTML content with blue links
   const renderMessageWithLinks = (text: string) => {
-    return { __html: text };
+    // Add a style to make links blue and underlined on hover
+    const linkedText = text.replace(
+      /<a\s+href=/g, 
+      '<a style="color: #33C3F0; text-decoration: none; font-weight: 500;" class="hover:underline" href='
+    );
+    return { __html: linkedText };
   };
 
   return (
