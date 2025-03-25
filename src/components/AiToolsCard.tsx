@@ -50,16 +50,6 @@ const AiToolsCard = () => {
                   alt="AI Web Tools Collection" 
                   className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark/90 via-cyber-dark/30 to-transparent group-hover:opacity-80 transition-opacity duration-300 flex items-end">
-                  <div className="p-6">
-                    <div className="font-display text-xl font-semibold text-white mb-2">AI Web Tools Collection</div>
-                    <p className="text-gray-300 text-sm mb-4">Powerful AI tools to enhance your productivity and career</p>
-                    <span className="inline-flex items-center text-cyber-primary-purple text-sm">
-                      Visit aiwebtools.ai
-                      <ExternalLink size={14} className="ml-1" />
-                    </span>
-                  </div>
-                </div>
               </a>
             </div>
           </div>
