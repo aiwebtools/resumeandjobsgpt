@@ -12,6 +12,7 @@ import DisclaimerModal from "../components/DisclaimerModal";
 import SupportChat from "../components/SupportChat";
 import ResumeSpecialistSection from "../components/ResumeSpecialistSection";
 import JobFinderSection from "../components/JobFinderSection";
+import LegalDisclaimer from "../components/LegalDisclaimer";
 
 const Index = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const Index = () => {
       <Testimonials />
       <AiToolsCard />
       <FAQ />
+      <LegalDisclaimer />
       <Footer />
       <DisclaimerModal />
       <SupportChat />
