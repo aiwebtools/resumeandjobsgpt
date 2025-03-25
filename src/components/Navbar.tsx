@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
@@ -67,24 +66,24 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center space-x-3">
+          <div className="hidden md:flex md:items-center space-x-4">
             {/* AI Tool Golden Buttons */}
-            <div className="flex space-x-2 mr-4">
+            <div className="flex space-x-6 mr-6">
               {aiToolLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
-                  className="group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center group"
                 >
                   <Button 
                     variant="outline" 
-                    size="sm"
-                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(245,158,11,0.5)] h-10 w-10 p-0 flex items-center justify-center rounded-md"
+                    size="default"
+                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(245,158,11,0.5)] flex items-center justify-center gap-2 px-4 py-2 h-10"
                   >
                     <Sparkles className="h-4 w-4" />
-                    <span className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs text-white bg-black/70 px-2 py-1 rounded whitespace-nowrap transition-opacity">
-                      {link.name}
-                    </span>
+                    <span className="font-medium">{link.name}</span>
                   </Button>
                 </a>
               ))}
@@ -120,25 +119,23 @@ const Navbar = () => {
         <div className="md:hidden bg-cyber-dark/95 backdrop-blur-lg border-t border-white/10 animate-slide-up">
           <div className="container mx-auto px-4 py-3">
             {/* Mobile AI Tools Buttons */}
-            <div className="flex justify-center space-x-4 py-4">
+            <div className="flex flex-col space-y-4 py-4">
               {aiToolLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
-                  className="inline-block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
                 >
-                  <div className="flex flex-col items-center">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 transform hover:scale-105 h-12 w-12 p-0 flex items-center justify-center rounded-md mb-1"
-                    >
-                      <Sparkles className="h-5 w-5" />
-                    </Button>
-                    <span className="block text-xs text-center mt-1 text-white w-24 truncate">
-                      {link.name}
-                    </span>
-                  </div>
+                  <Button 
+                    variant="outline" 
+                    size="default"
+                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 w-full flex items-center justify-center gap-2"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    <span className="font-medium">{link.name}</span>
+                  </Button>
                 </a>
               ))}
             </div>
