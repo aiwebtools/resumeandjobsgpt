@@ -46,7 +46,7 @@ const AiToolsCard = () => {
             <div className="relative z-10 rounded-lg overflow-hidden border border-white/10 hover:border-cyber-primary-purple/50 transition-all duration-300">
               <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="block relative group">
                 <img 
-                  src="https://ideogram.ai/assets/image/lossless/response/UOsVI9YCSae7Y_Xhvw3gjQ" 
+                  src="https://ideogram.ai/assets/image/lossless/response/n6N-krYVSn29qKdBfgq3ZA" 
                   alt="AI Web Tools Collection" 
                   className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
                 />
