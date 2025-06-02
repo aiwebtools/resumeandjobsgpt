@@ -3,11 +3,23 @@ import React from "react";
 
 const LegalDisclaimer = () => {
   return (
-    <section id="disclaimer" className="pt-20 pb-10 bg-cyber-dark">
-      <div className="container mx-auto px-4">
-        <div className="glass-card p-6 mb-10">
-          <h3 className="text-white font-display font-semibold text-lg mb-4">Legal Disclaimer</h3>
-          <div className="text-gray-300 text-sm space-y-3">
+    <section id="disclaimer" className="pt-20 pb-10 bg-cyber-dark relative overflow-hidden">
+      {/* Divine Background Effects */}
+      <div className="absolute inset-0 divine-aurora-bg opacity-30"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-divine-gold/20 rounded-full filter blur-3xl animate-divine-float"></div>
+      <div className="absolute bottom-0 right-1/3 w-80 h-80 bg-divine-platinum/20 rounded-full filter blur-3xl animate-divine-pulse"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="divine-glass-card p-8 mb-10 transform hover:scale-[1.02] transition-all duration-500">
+          {/* Informational Disclaimer */}
+          <div className="divine-info-banner mb-6 p-4 rounded-lg bg-divine-gold/10 border border-divine-gold/30">
+            <p className="text-divine-gold text-sm font-medium text-center">
+              This website is for informational, educational, and research purposes only.
+            </p>
+          </div>
+          
+          <h3 className="text-white font-display font-semibold text-lg mb-6 divine-text-glow">Legal Disclaimer</h3>
+          <div className="text-gray-300 text-sm space-y-4 leading-relaxed">
             <p>
               Resume & Job Finder AI Suite is an AI-powered tool designed to assist with resume enhancement and job search and is provided "as is" without any warranties, express or implied. While we strive for accuracy and usefulness, AI Web Tools LLC does not guarantee employment outcomes, interview results, or the suitability of content for any particular purpose.
             </p>
@@ -18,7 +30,7 @@ const LegalDisclaimer = () => {
               By using Resume & Job Finder AI Suite, you acknowledge that employment outcomes are dependent on numerous factors beyond our control, including but not limited to individual qualifications, job market conditions, and employer preferences.
             </p>
             <p>
-              For full terms and conditions, please refer to our <a href="https://aiwebtools.ai/terms-of-services" className="text-cyber-primary-purple hover:underline">Terms of Service</a>.
+              For full terms and conditions, please refer to our <a href="https://aiwebtools.lovable.app/disclaimers" className="text-divine-gold hover:text-divine-platinum transition-colors duration-300 hover:underline divine-link-glow">Terms of Service</a>.
             </p>
           </div>
         </div>

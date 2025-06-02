@@ -27,37 +27,37 @@ const DisclaimerModal = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cyber-dark/80 backdrop-blur-sm">
-      <div className="glass-card w-full max-w-md p-6 animate-scale-in">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-display font-semibold text-white">Disclaimer</h3>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-cyber-dark/80 backdrop-blur-sm divine-modal-overlay">
+      <div className="divine-glass-card w-full max-w-md p-8 animate-divine-scale-in">
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-xl font-display font-semibold text-white divine-text-glow">Disclaimer</h3>
           <button
             onClick={handleAgree}
-            className="text-gray-400 hover:text-white transition-colors"
+            className="text-gray-400 hover:text-divine-gold transition-colors duration-300"
           >
             <X size={20} />
           </button>
         </div>
-        <div className="text-gray-300 text-sm mb-6 space-y-4">
+        <div className="text-gray-300 text-sm mb-8 space-y-4 leading-relaxed">
           <p>
             The Resume Enhancer GPT tool is designed to assist in resume creation and optimization. While we strive to provide valuable assistance, we cannot guarantee employment outcomes or interview results.
           </p>
           <p>
             By using this service, you acknowledge that:
           </p>
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="list-disc pl-6 space-y-2">
             <li>Results may vary based on individual qualifications, job market conditions, and other factors.</li>
             <li>The content generated should be reviewed and verified for accuracy before submission.</li>
             <li>You are responsible for the final content of your resume and cover letter.</li>
             <li>This tool does not replace professional career counseling services.</li>
           </ul>
           <p>
-            For full terms and conditions, please refer to our <a href="https://aiwebtools.ai/terms-of-services" className="text-cyber-primary-purple underline">Terms of Service</a>.
+            For full terms and conditions, please refer to our <a href="https://aiwebtools.lovable.app/disclaimers" className="text-divine-gold hover:text-divine-platinum transition-colors duration-300 underline divine-link-glow">Terms of Service</a>.
           </p>
         </div>
         <button
           onClick={handleAgree}
-          className="w-full cyber-button py-2.5"
+          className="w-full divine-button py-3"
         >
           I Agree
         </button>
