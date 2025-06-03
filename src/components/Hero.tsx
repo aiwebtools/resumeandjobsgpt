@@ -21,11 +21,11 @@ const Hero = () => {
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-6">
-              Elevate Your <span className="cyber-gradient-text">Career</span> With Our
-              <span className="cyber-gradient-text"> AI Tools Suite</span>
+              #1 AI Web Tools for <span className="cyber-gradient-text">Career Success</span> - 
+              <span className="cyber-gradient-text"> Resume Enhancer GPT</span> & More
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Our comprehensive AI Suite helps you optimize your resume, create tailored cover letters, and find the perfect job opportunities - all powered by advanced AI technology to maximize your career potential.
+              AIWEBTOOLS.AI presents the most advanced AI tools suite for professionals. Our Resume Enhancer GPT, Resume Specialist GPT, and Job Finder GPT help you optimize resumes, create tailored cover letters, and find perfect job opportunities with cutting-edge artificial intelligence technology.
             </p>
 
             {/* Three AI Tool Buttons */}
@@ -36,6 +36,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white rounded-lg p-[1px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(56,189,248,0.5)]"
+                aria-label="Try Resume Enhancer GPT - AI-powered resume optimization tool"
               >
                 <div className="h-full w-full px-4 py-3 rounded-lg bg-cyber-dark/90 backdrop-blur-sm flex flex-col items-center justify-center transition-all">
                   <span className="font-bold mb-1">Try Resume Enhancer GPT</span>
@@ -52,6 +53,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg p-[1px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(217,70,239,0.5)]"
+                aria-label="Try Resume Specialist GPT - AI resume creation and optimization"
               >
                 <div className="h-full w-full px-4 py-3 rounded-lg bg-cyber-dark/90 backdrop-blur-sm flex flex-col items-center justify-center transition-all">
                   <span className="font-bold mb-1">Try Resume Specialist GPT</span>
@@ -68,6 +70,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-600 hover:to-emerald-500 text-white rounded-lg p-[1px] shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]"
+                aria-label="Try Job Finder GPT - AI-powered job search and discovery tool"
               >
                 <div className="h-full w-full px-4 py-3 rounded-lg bg-cyber-dark/90 backdrop-blur-sm flex flex-col items-center justify-center transition-all">
                   <span className="font-bold mb-1">Try Job Finder GPT</span>
@@ -79,9 +82,9 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Features Pills */}
+            {/* SEO-Optimized Features Pills */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-              {["Resume Enhancement", "Resume Creation", "Job Finding", "Cover Letters", "Interview Prep"].map((feature) => (
+              {["AI Resume Enhancement", "AI Resume Creation", "AI Job Finding", "AI Cover Letters", "AI Interview Prep"].map((feature) => (
                 <div
                   key={feature}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyber-dark border border-white/10 text-sm text-gray-300"

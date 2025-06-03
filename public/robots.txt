@@ -1,8 +1,11 @@
+
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +15,19 @@ Allow: /
 
 User-agent: *
 Allow: /
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://aiwebtools.lovable.app/sitemap.xml
+
+# Popular pages
+Allow: /
+Allow: /#features
+Allow: /#how-it-works
+Allow: /#faq
+Allow: /#disclaimer
+
+# External tool links
+Allow: https://chatgpt.com/g/g-SUjFvDzsr-resume-enhancer-gpt
+Allow: https://chatgpt.com/g/g-3RPD1GkR4-resume-specialist-gpt
+Allow: https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt
