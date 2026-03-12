@@ -103,7 +103,7 @@ const Footer = () => {
               ))}
             </ul>
             <a
-              href="https://www.aiwebtools.ai"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools"
               className="divine-secondary-button inline-flex items-center text-sm font-medium"
             >
               More AI Tools
