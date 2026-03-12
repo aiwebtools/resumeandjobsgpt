@@ -21,7 +21,7 @@ const AiToolsCard = () => {
     },
     {
       name: "More AI Tools",
-      url: "https://www.aiwebtools.ai",
+      url: "https://aiwebtools.lovable.app/?via=aiwebtools",
       description: "Explore our full suite of AI productivity tools",
     },
   ];
@@ -45,7 +45,7 @@ const AiToolsCard = () => {
           {/* Moved image up, before the tools grid */}
           <div className="relative mb-12">
             <div className="relative z-10 rounded-lg overflow-hidden border border-white/10 hover:border-cyber-primary-purple/50 transition-all duration-300">
-              <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="block relative group">
+              <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="block relative group">
                 <img 
                   src="https://ideogram.ai/assets/image/lossless/response/n6N-krYVSn29qKdBfgq3ZA" 
                   alt="AI Web Tools Collection" 

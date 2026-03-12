@@ -9,7 +9,7 @@ const Footer = () => {
     { name: "Job Finder GPT", url: "https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt" },
     { name: "FAQ", url: "#faq" },
     { name: "Disclaimer", url: "#disclaimer" },
-    { name: "More AI Tools", url: "https://www.aiwebtools.ai" },
+    { name: "More AI Tools", url: "https://aiwebtools.lovable.app/?via=aiwebtools" },
   ];
 
   const legalLinks = [
@@ -103,7 +103,7 @@ const Footer = () => {
               ))}
             </ul>
             <a
-              href="https://www.aiwebtools.ai"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools"
               className="divine-secondary-button inline-flex items-center text-sm font-medium"
             >
               More AI Tools
@@ -114,7 +114,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-400 text-sm border-t border-divine-gold/20 pt-8">
-          <a href="https://www.aiwebtools.ai" className="hover:text-divine-gold transition-colors duration-300 divine-text-subtle-glow">
+          <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-divine-gold transition-colors duration-300 divine-text-subtle-glow">
             © 2025 AI WEB TOOLS LLC All rights reserved.
           </a>
         </div>
