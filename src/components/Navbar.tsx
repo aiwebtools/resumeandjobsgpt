@@ -115,45 +115,50 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-cyber-dark/95 backdrop-blur-lg border-t border-white/10 animate-slide-up">
-          <div className="container mx-auto px-4 py-3">
-            {/* Mobile AI Tools Buttons */}
-            <div className="flex flex-col space-y-4 py-4">
-              {aiToolLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
-                >
-                  <Button 
-                    variant="outline" 
-                    size="default"
-                    className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 w-full flex items-center justify-center gap-2"
-                  >
-                    <Sparkles className="h-4 w-4" />
-                    <span className="font-medium">{link.name}</span>
-                  </Button>
-                </a>
-              ))}
-            </div>
-            
-            {/* Other mobile nav links */}
-            {navLinks.slice(3).map((link) => (
+      <div 
+        className={`md:hidden bg-cyber-dark/95 backdrop-blur-lg border-t border-white/10 transition-all duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="container mx-auto px-4 py-3">
+          {/* Mobile AI Tools Buttons */}
+          <div className="flex flex-col space-y-3 py-3">
+            {aiToolLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.url}
-                className="block text-gray-300 hover:text-white py-3 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link.name}
+                <Button 
+                  variant="outline" 
+                  size="default"
+                  className="bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:from-yellow-400 hover:via-amber-300 hover:to-yellow-200 text-black border-amber-600 hover:border-amber-400 transition-all duration-300 w-full flex items-center justify-center gap-2 text-sm"
+                >
+                  <Sparkles className="h-4 w-4" />
+                  <span className="font-medium">{link.name}</span>
+                </Button>
               </a>
             ))}
           </div>
+          
+          {/* Other mobile nav links */}
+          {navLinks.slice(3).map((link) => (
+            <a
+              key={link.name}
+              href={link.url}
+              target={link.url.startsWith('#') ? '_self' : '_blank'}
+              rel={link.url.startsWith('#') ? undefined : 'noopener noreferrer'}
+              className="block text-gray-300 hover:text-white py-3 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };

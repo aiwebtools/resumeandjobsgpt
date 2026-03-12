@@ -76,7 +76,7 @@ AI Web Tools LLC is a tech startup founded in 2021 that specializes in AI-powere
 General info:
 - 📧 For support: <a href="mailto:Contact@ai-webtools.com">Contact@ai-webtools.com</a> or <a href="tel:+14758008096">(475) 800-8096</a>
 - 💰 Free basic versions, premium features for paid subscribers
-- 🌐 More tools available at <a href="https://www.aiwebtools.ai">www.aiwebtools.ai</a>`
+- 🌐 More tools available at <a href="https://aiwebtools.lovable.app/?via=aiwebtools">www.aiwebtools.ai</a>`
           },
           {
             role: 'user',

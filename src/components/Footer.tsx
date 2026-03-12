@@ -114,7 +114,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-gray-400 text-sm border-t border-divine-gold/20 pt-8">
-          <a href="https://www.aiwebtools.ai" className="hover:text-divine-gold transition-colors duration-300 divine-text-subtle-glow">
+          <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-divine-gold transition-colors duration-300 divine-text-subtle-glow">
             © 2025 AI WEB TOOLS LLC All rights reserved.
           </a>
         </div>
