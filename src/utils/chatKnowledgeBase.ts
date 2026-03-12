@@ -53,7 +53,7 @@ export const knowledgeBase = {
     "Resume Specialist GPT: Available at <a href='https://chatgpt.com/g/g-3RPD1GkR4-resume-specialist-gpt'>Resume Specialist GPT</a> 📝",
     "Job Finder GPT: Available at <a href='https://chatgpt.com/g/g-67e1ec8fe9f881918c0b884a43034b9d-job-finder-gpt'>Job Finder GPT</a> 🔎",
     "All tools are part of the Resume & Job Finder AI Suite, presented by AiWebTools.Ai 🌟",
-    "More AI tools are available at <a href='https://www.aiwebtools.ai'>www.aiwebtools.ai</a> 🌟"
+    "More AI tools are available at <a href='https://aiwebtools.lovable.app/?via=aiwebtools'>www.aiwebtools.ai</a> 🌟"
   ],
   "contact": [
     "For technical support with any tool in the Resume & Job Finder AI Suite, you can email us at <a href='mailto:Contact@ai-webtools.com'>Contact@ai-webtools.com</a> or call us at <a href='tel:+14758008096'>(475) 800-8096</a>. 📧",
