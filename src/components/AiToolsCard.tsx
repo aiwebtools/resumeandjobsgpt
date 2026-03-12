@@ -21,7 +21,7 @@ const AiToolsCard = () => {
     },
     {
       name: "More AI Tools",
-      url: "https://www.aiwebtools.ai",
+      url: "https://aiwebtools.lovable.app/?via=aiwebtools",
       description: "Explore our full suite of AI productivity tools",
     },
   ];
